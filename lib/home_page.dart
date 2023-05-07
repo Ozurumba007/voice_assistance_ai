@@ -19,6 +19,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
+          // Virtual Assistant Picture
           Stack(
             children: [
               Container(
@@ -32,7 +33,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 height: 123,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     image: AssetImage('assets/images/virtualAssistant.png'),
@@ -40,7 +41,52 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ],
-          )
+          ),
+
+          // chat bubble
+
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 10,
+            ),
+            margin:
+                const EdgeInsets.symmetric(horizontal: 40).copyWith(top: 30),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Pallete.borderColor,
+              ),
+              borderRadius:
+                  BorderRadius.circular(20).copyWith(topLeft: Radius.zero),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 10.0,
+              ),
+              child: Text(
+                'Good Morning, what task can I do for you?',
+                style: TextStyle(
+                  fontFamily: 'Cera Pro',
+                  color: Pallete.mainFontColor,
+                  fontSize: 25,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.centerLeft,
+            margin: EdgeInsets.only(top: 10, left: 22),
+            child: const Text(
+              'Here are a few features',
+              style: TextStyle(
+                fontFamily: 'Cera Pro',
+                color: Pallete.mainFontColor,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ],
       ),
     );
