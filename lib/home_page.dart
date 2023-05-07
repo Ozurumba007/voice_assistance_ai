@@ -87,6 +87,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+          //  alternative features list
+          Column(
+            children: [Text('data')],
+          )
         ],
       ),
     );
