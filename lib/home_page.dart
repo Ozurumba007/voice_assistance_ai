@@ -104,21 +104,25 @@ class _HomePageState extends State<HomePage> {
                       'A smarter way to stay organized and informed with ChatGPT',
                 ),
                 FeatureBox(
-                  color: Pallete.firstSuggestionBoxColor,
+                  color: Pallete.secondSuggestionBoxColor,
                   headerText: 'Dall-E',
                   descriptionText:
                       'Get inspired and stay creative with your personal assistant powered by Dall-E',
                 ),
                 FeatureBox(
-                  color: Pallete.firstSuggestionBoxColor,
+                  color: Pallete.thirdSuggestionBoxColor,
                   headerText: 'Smart Voice Assistant',
                   descriptionText:
                       'Get the best of the both worlds with a voice assistant powered by Dall-E and ChatGPT',
                 ),
               ],
             ),
-          )
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.mic),
       ),
     );
   }
