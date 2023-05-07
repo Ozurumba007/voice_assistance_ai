@@ -26,33 +26,36 @@ class FeatureBox extends StatelessWidget {
           Radius.circular(15),
         ),
       ),
-      child: Column(
-        children: [
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              headerText,
-              style: const TextStyle(
-                fontFamily: 'Cera Pro',
-                color: Pallete.blackColor,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 20.0).copyWith(left: 15),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                headerText,
+                style: const TextStyle(
+                  fontFamily: 'Cera Pro',
+                  color: Pallete.blackColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-          SizedBox(height: 3),
-          Padding(
-            padding: const EdgeInsets.only(right: 20.0),
-            child: Text(
-              descriptionText,
-              style: const TextStyle(
-                fontFamily: 'Cera Pro',
-                color: Pallete.blackColor,
-                fontWeight: FontWeight.bold,
+            SizedBox(height: 3),
+            Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: Text(
+                descriptionText,
+                style: const TextStyle(
+                  fontFamily: 'Cera Pro',
+                  color: Pallete.blackColor,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
