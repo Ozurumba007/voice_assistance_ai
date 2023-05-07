@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
           ),
           //  alternative features list
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0).copyWith(
+            padding: const EdgeInsets.symmetric(vertical: 10.0).copyWith(
               left: 15,
             ),
             child: Column(
