@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voice_assistance_ai/pallete.dart';
 
 import 'home_page.dart';
 
@@ -14,9 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'Allen',
+      theme: ThemeData.light(useMaterial3: true).copyWith(
+          scaffoldBackgroundColor: Pallete.whiteColor,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Pallete.whiteColor,
+          )),
       home: HomePage(),
     );
   }
