@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:voice_assistance_ai/feature_box.dart';
 import 'package:voice_assistance_ai/pallete.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,13 +23,15 @@ class _HomePageState extends State<HomePage> {
           // Virtual Assistant Picture
           Stack(
             children: [
-              Container(
-                height: 120,
-                width: 120,
-                margin: const EdgeInsets.only(top: 4),
-                decoration: const BoxDecoration(
-                  color: Pallete.assistantCircleColor,
-                  shape: BoxShape.circle,
+              Center(
+                child: Container(
+                  height: 120,
+                  width: 120,
+                  margin: const EdgeInsets.only(top: 4),
+                  decoration: const BoxDecoration(
+                    color: Pallete.assistantCircleColor,
+                    shape: BoxShape.circle,
+                  ),
                 ),
               ),
               Container(
@@ -88,8 +91,32 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           //  alternative features list
-          Column(
-            children: [Text('data')],
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0).copyWith(
+              left: 15,
+            ),
+            child: Column(
+              children: [
+                FeatureBox(
+                  color: Pallete.firstSuggestionBoxColor,
+                  headerText: 'ChatGPT',
+                  descriptionText:
+                      'A smarter way to stay organized and informed with ChatGPT',
+                ),
+                FeatureBox(
+                  color: Pallete.firstSuggestionBoxColor,
+                  headerText: 'Dall-E',
+                  descriptionText:
+                      'Get inspired and stay creative with your personal assistant powered by Dall-E',
+                ),
+                FeatureBox(
+                  color: Pallete.firstSuggestionBoxColor,
+                  headerText: 'Smart Voice Assistant',
+                  descriptionText:
+                      'Get the best of the both worlds with a voice assistant powered by Dall-E and ChatGPT',
+                ),
+              ],
+            ),
           )
         ],
       ),
