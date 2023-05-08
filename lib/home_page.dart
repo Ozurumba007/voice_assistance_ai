@@ -121,8 +121,12 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Pallete.firstSuggestionBoxColor,
         onPressed: () {},
-        child: Icon(Icons.mic),
+        child: Icon(
+          Icons.mic,
+          color: Pallete.blackColor,
+        ),
       ),
     );
   }
