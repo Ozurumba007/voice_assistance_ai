@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:voice_assistance_ai/feature_box.dart';
+import 'package:voice_assistance_ai/openai_service.dart';
 import 'package:voice_assistance_ai/pallete.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final speechToText = SpeechToText();
   String lastWords = '';
+  final OpenAIService openAIService = OpenAIService();
   @override
   void initState() {
     super.initState();
@@ -25,12 +27,12 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-  void startListening() async {
+  Future<void> startListening() async {
     await speechToText.listen(onResult: onSpeechResult);
     setState(() {});
   }
 
-  void stopListening() async {
+  Future<void> stopListening() async {
     await speechToText.stop();
     setState(() {});
   }
@@ -163,9 +165,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Pallete.firstSuggestionBoxColor,
         onPressed: () async {
           if (await speechToText.hasPermission && speechToText.isNotListening) {
-            startListening();
+            await startListening();
           } else if (speechToText.isListening) {
-            stopListening();
+            await openAIService.isArtPromptAPI(lastWords);
+            await stopListening();
           } else {
             initSpeechToText();
           }
